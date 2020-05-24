@@ -1,8 +1,9 @@
 const inquirer = require("inquirer");
-// const Employee = require("./Employee.js");
-// const Engineer = require("./Engineer.js");
-// const Intern = require("./Intern.js");
-// const Manager = require("./Manager.js");
+const fs = require("fs");
+// const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
 
 function promptManager () {
     return inquirer.prompt([
@@ -25,6 +26,26 @@ function promptManager () {
           name: "officeNumber",
         },
     ])
+};
+
+function promptAdd () {
+  return inquirer.prompt([
+      {
+      type: "list",
+      message: "Which type of team member would you like to add?",
+      name: "addMember",
+      choices: ["Engineer", "Intern", "I am finished building my team"]
+      .then(function (data) {
+        if (data.addMember === "Engineer") {
+          return promptEngineer;
+        } else if (data.addMember === "Intern") {
+          return promptIntern;
+        } else {
+          return 
+        }
+      })
+      }
+  ])
 };
 
 function promptEngineer () {
@@ -73,16 +94,12 @@ function promptIntern () {
     ])
 };
 
-function promptAdd () {
-    return inquirer.prompt([
-        {
-        type: "list",
-        message: "Which type of team member would you like to add?",
-        name: "addMember",
-        choices: ["Engineer", "Intern", "I am finished building my team"]
-        }
-    ])
+function renderHTML() {
+    const template = render(employees);
+
+    fs.writeFile('./output/team.html', template, function (err) {
+      if (err) throw new Error(err);
+
+      console.log('Team Profile Created! Check out team.html in the Output folder to see it!');
+    });
 }
-
-
-  
