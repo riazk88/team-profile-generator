@@ -7,55 +7,55 @@ test ("creates new Engineer", () => {
 });
 
 test ("creates new Engineer name", () => {
-    const newEng = new Engineer(name);
     const name = "Bob";
+    const newEng = new Engineer(name);
     expect(newEng.name).toBe(name);
 });
 
 test ("creates new Engineer id", () => {
-    const newEng = new Engineer("Bob", id);
     const id = 123;
+    const newEng = new Engineer("Bob", id);
     expect(newEng.id).toBe(id);
 });
 
 test ("creates new Engineer email", () => {
-    const newEng = new Engineer("Bob", 123, email);
     const email = "bob@yahoo.com";
+    const newEng = new Engineer("Bob", 123, email);
     expect(newEng.email).toBe(email);
 });
 
 test ("creates new Engineer github", () => {
-    const newEng = new Engineer("Bob", 123, "bob@yahoo.com", github);
     const github = "bobo";
+    const newEng = new Engineer("Bob", 123, "bob@yahoo.com", github);
     expect(newEng.github).toBe(github);
 });
 
 test ("creates name getName()", () => {
-    const newEng = new Engineer(name);
     const name = "Bob";
+    const newEng = new Engineer(name);
     expect(newEng.getName).toBe(name);
 });
 
 test ("creates id getID()", () => {
-    const newEng = new Engineer("Bob", id);
     const id = 123;
+    const newEng = new Engineer("Bob", id);
     expect(newEng.getId).toBe(id);
 });
 
 test ("creates email getEmail()", () => {
-    const newEng = new Engineer("Bob", 123, email);
     const email = "bob@yahoo.com";
+    const newEng = new Engineer("Bob", 123, email);
     expect(newEng.getEmail).toBe(email);
 });
 
 test ("creates new Engineer getGithub()", () => {
-    const newEng = new Engineer("Bob", 123, "bob@yahoo.com", github);
     const github = "bobo";
+    const newEng = new Engineer("Bob", 123, "bob@yahoo.com", github);
     expect(newEng.getGithub).toBe(github);
 });
 
 test ("creates getRole()", () => {
-    const newEng = new Engineer("Bob", 123, "bob@yahoo.com", "bobo");
     const role = "Engineer";
+    const newEng = new Engineer("Bob", 123, "bob@yahoo.com", "bobo");
     expect(newEng.getRole).toBe(role);
 });

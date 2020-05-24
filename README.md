@@ -9,6 +9,6 @@ SO THAT I have quick access to their emails and GitHub profiles
 ## Description
 The profile below was created using the Team Profile Generator. Check it out!
 
-![Alt text]()
+![Alt text](./src/team_profile_screenshot)
 
 ## Link to Demo Video
