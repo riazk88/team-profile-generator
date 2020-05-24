@@ -12,3 +12,5 @@ The profile below was created using the Team Profile Generator. Check it out!
 ![Alt text](./src/team_profile_screenshot.png)
 
 ## Link to Demo Video
+
+https://drive.google.com/file/d/1fb62_HGmk3r0t-ohfUwOMXOJ6ckAiU7I/view

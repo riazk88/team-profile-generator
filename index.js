@@ -116,10 +116,3 @@ function promptFinish() {
 }
 
 promptUser();
-
-// promptUser()
-//   .then(data => {
-//   fs.writeFile("./output/team.html", renderHTML(data), (error) => {
-//   console.log("Team Profile Created! Check out team.html in the output folder to see it!");
-//   });
-// });
