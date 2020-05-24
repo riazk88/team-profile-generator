@@ -25,13 +25,13 @@ function generateHTML () {
                 <div class="card-block">
                   <img src="">
                   <div class="card-title">
-                    <h4>Lolly</h4>
+                    <h4>${data.name}</h4>
                   </div>
-                  <div class="card-text">Manager</div>
+                  <div class="card-text">${data.role}</div>
                   <br>
-                  <div class="card-text">Email:</div><a href="#">lollypop@yahoo.com</a>
-                  <div class="card-text">ID: 789</div>
-                  <div class="card-text">Office Number: 8018880000</div>
+                  <div class="card-text">Email:</div><a href="#">${data.email}</a>
+                  <div class="card-text">ID: ${data.id}</div>
+                  <div class="card-text">Office Number: ${data.officeNumber}</div>
                 </div>
               </div>
             </div>
@@ -40,13 +40,13 @@ function generateHTML () {
                 <div class="card-block">
                   <img src="">
                   <div class="card-title">
-                    <h4>Bob</h4>
+                    <h4>${data.name}</h4>
                   </div>
-                  <div class="card-text">Engineer</div>
+                  <div class="card-text">${data.role}</div>
                   <br>
-                  <div class="card-text">Email:</div><a href="#">bob@yahoo.com</a>
-                  <div class="card-text">ID: 123</div>
-                  <div class="card-text">GitHub:</div><a href="#">bobo</a>
+                  <div class="card-text">Email:</div><a href="#">${data.email}</a>
+                  <div class="card-text">ID: ${data.id}</div>
+                  <div class="card-text">GitHub: </div><a href="#">${data.github}</a>
                 </div>
               </div>
             </div>
@@ -55,13 +55,13 @@ function generateHTML () {
                 <div class="card-block">
                   <img src="">
                   <div class="card-title">
-                    <h4>May</h4>
+                    <h4>${data.name}</h4>
                   </div>
-                  <div class="card-text">Intern</div>
+                  <div class="card-text">${data.role}</div>
                   <br>
-                  <div class="card-text">Email:</div><a href="#">maya@yahoo.com</a>
-                  <div class="card-text">ID: 1288</div>
-                  <div class="card-text">School: Yale</div>
+                  <div class="card-text">Email:</div><a href="#">${data.email}</a>
+                  <div class="card-text">ID: ${data.id}</div>
+                  <div class="card-text">School: ${data.school}</div>
                 </div>
               </div>
             </div>

@@ -1,11 +1,13 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
+// const fs = require("fs");
 // const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+// const generateHTML = require("./dist/generateHTML");
+const employees = [];
 
-function promptManager () {
+function promptUser () {
     return inquirer.prompt([
       /* Pass your questions in here */
       {
@@ -26,6 +28,11 @@ function promptManager () {
           name: "officeNumber",
         },
     ])
+    .then(data => {
+      const manager = new Manager(data.name, data.id, data.email, data.officeNumber)
+      employees.push(manager)
+      promptAdd()
+    })
 };
 
 function promptAdd () {
@@ -33,19 +40,19 @@ function promptAdd () {
       {
       type: "list",
       message: "Which type of team member would you like to add?",
-      name: "addMember",
+      name: "addEmployee",
       choices: ["Engineer", "Intern", "I am finished building my team"]
-      .then(function (data) {
-        if (data.addMember === "Engineer") {
-          return promptEngineer;
-        } else if (data.addMember === "Intern") {
-          return promptIntern;
-        } else {
-          return 
-        }
-      })
       }
   ])
+      .then(function (data) {
+        if (data.addEmployee === "Engineer") {
+          promptEngineer();
+        } else if (data.addMember === "Intern") {
+          promptIntern();
+        } else {
+          finish();
+        }
+      });
 };
 
 function promptEngineer () {
@@ -69,6 +76,11 @@ function promptEngineer () {
           name: "github",
         },
     ])
+    .then(function(data) {
+      const engineer = new Engineer(data.name, data.id, data.email, data.github)
+      employees.push(engineer)
+      promptAdd()
+    })
 };
 
 function promptIntern () {
@@ -92,14 +104,25 @@ function promptIntern () {
           name: "school",
         },
     ])
+    .then(function(data) {
+      const intern = new Intern(data.name, data.id, data.email, data.school)
+      employees.push(intern)
+      promptAdd()
+    })
 };
 
-function renderHTML() {
-    const template = render(employees);
-
-    fs.writeFile('./output/team.html', template, function (err) {
-      if (err) throw new Error(err);
-
-      console.log('Team Profile Created! Check out team.html in the Output folder to see it!');
-    });
+function finish() {
+  console.log("Team Profile Created! Check out team.html in the Output folder to see it!")
 }
+
+promptUser();
+
+// function generateHTML() {
+//     const template = render(employees);
+
+//     fs.writeFile('./output/team.html', template, function (err) {
+//       if (err) throw new Error(err);
+
+//       console.log('Team Profile Created! Check out team.html in the Output folder to see it!');
+//     });
+// }
