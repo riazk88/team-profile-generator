@@ -47,7 +47,7 @@ function promptAdd () {
       .then(function (data) {
         if (data.addEmployee === "Engineer") {
           promptEngineer();
-        } else if (data.addMember === "Intern") {
+        } else if (data.addEmployee === "Intern") {
           promptIntern();
         } else {
           finish();
