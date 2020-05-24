@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
-// const fs = require("fs");
+const fs = require("fs");
 // const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-// const generateHTML = require("./dist/generateHTML");
+const renderHTML = require("./dist/generateHTML");
 const employees = [];
 
 function promptUser () {
@@ -50,7 +50,7 @@ function promptAdd () {
         } else if (data.addEmployee === "Intern") {
           promptIntern();
         } else {
-          finish();
+          promptFinish();
         }
       });
 };
@@ -111,18 +111,15 @@ function promptIntern () {
     })
 };
 
-function finish() {
+function promptFinish() {
   console.log("Team Profile Created! Check out team.html in the Output folder to see it!")
 }
 
 promptUser();
 
-// function generateHTML() {
-//     const template = render(employees);
-
-//     fs.writeFile('./output/team.html', template, function (err) {
-//       if (err) throw new Error(err);
-
-//       console.log('Team Profile Created! Check out team.html in the Output folder to see it!');
-//     });
-// }
+// promptUser()
+//   .then(data => {
+//   fs.writeFile("./output/team.html", renderHTML(data), (error) => {
+//   console.log("Team Profile Created! Check out team.html in the output folder to see it!");
+//   });
+// });

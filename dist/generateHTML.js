@@ -1,4 +1,4 @@
-function generateHTML () {
+function generateHTML (data) {
     return `<!DOCTYPE html>
     <html lang="en-us">
         
